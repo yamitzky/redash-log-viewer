@@ -1,5 +1,6 @@
 const express = require('express')
 const axios = require('axios')
+const path = require('path')
 const app = express()
 
 const REDASH_URL = process.env.REDASH_URL || 'https://app.redash.com'
@@ -27,6 +28,10 @@ app.all('/api/*', (req, res) => {
 })
 
 app.use(express.static('dist'))
+
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(PORT, function () {
   console.log(`app listening on port ${PORT}!`)
