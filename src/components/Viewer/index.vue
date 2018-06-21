@@ -1,6 +1,6 @@
 <template>
   <row>
-    <i-col span="10" class="left">
+    <i-col span="12" class="left">
       <affix>
         <div class="button">
           <button-group shape="circle">
@@ -11,7 +11,7 @@
       </affix>
       <event-timeline></event-timeline>
     </i-col>
-    <i-col span="14" class="right">
+    <i-col span="12" class="right">
       <affix>
         <tabs>
           <tab-pane label="Property">

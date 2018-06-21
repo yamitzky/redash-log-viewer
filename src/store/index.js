@@ -59,7 +59,7 @@ export default new Vuex.Store({
       }
       return state.queryResult.data.rows.map(row => {
         const cols = state.queryResult.data.columns
-          .filter(col => col.name !== 'time' && col.name !== 'event' && col.name !== 'property')
+          .filter(col => col.name !== 'time' && col.name !== 'event' && col.name !== 'property' && col.name !== 'subevent')
           .map(col => col.name)
         let property = row.property
         try {
@@ -71,6 +71,7 @@ export default new Vuex.Store({
         return {
           time: dayjs(row.time),
           event: row.event,
+          subevent: row.subevent,
           property,
           attributions: cols.map(col => ({ name: col, value: row[col] }))
         }
