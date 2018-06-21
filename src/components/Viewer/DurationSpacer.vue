@@ -28,7 +28,7 @@ export default {
     },
     margin () {
       if (this.seconds <= 1) {
-        return 1
+        return 0.5
       } else if (this.seconds <= 10) {
         return 3
       } else if (this.seconds <= 60) {

@@ -36,6 +36,9 @@ export default {
 li {
   list-style-position: inside;
 }
+h3 {
+  margin-bottom: 1em;
+}
 </style>
 
 <style>
