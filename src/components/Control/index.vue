@@ -1,6 +1,7 @@
 <template>
     <div class="root">
       <h2>{{ query.name }}</h2>
+      <p class="markdown-body" v-if="query.description"><vue-markdown>{{ query.description }}</vue-markdown></p>
       <div>
         <query-params></query-params>
       </div>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
 import QueryParams from './QueryParams'
 import { Button } from 'iview'
 import { mapActions, mapGetters, mapState } from 'vuex'
@@ -19,7 +21,8 @@ export default {
   name: 'Control',
   components: {
     QueryParams,
-    'i-button': Button
+    'i-button': Button,
+    VueMarkdown
   },
   methods: mapActions(['refreshQueryResult']),
   computed: {
@@ -55,7 +58,10 @@ h2 {
 .form-item:last-child {
   margin-right: 0;
 }
-h3 {
+h3, p {
   margin-bottom: 0.5em;
+}
+.markdown-body {
+  font-size: 100%;
 }
 </style>

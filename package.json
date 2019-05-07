@@ -22,6 +22,7 @@
     "lodash": "^4.17.10",
     "vue": "^2.5.2",
     "vue-json-pretty": "^1.3.5",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.5.4",
